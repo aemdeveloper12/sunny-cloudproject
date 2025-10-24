@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/sunnycloud",
+        "create path (nt:unstructured) /content/dam/sunnycloud/jcr:content",
+        "set properties on /content/dam/sunnycloud/jcr:content\n  set cq:conf{String} to /conf/sunnycloud\n  set jcr:title{String} to \"SunnyCloud AEM\"\nend"
+    ]
+}
