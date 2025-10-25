@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Template"
+    jcr:title="Custom Template by Using Static templates"
+    allowedPaths="[/content/sunnycloud(/.*)]"
+    ranking="{Long}1">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="sunnycloud/pages/base-page-component"/>
+</jcr:root>

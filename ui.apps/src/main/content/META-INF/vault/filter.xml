@@ -3,4 +3,6 @@
     <filter root="/apps/sunnycloud/clientlibs"/>
     <filter root="/apps/sunnycloud/components"/>
     <filter root="/apps/sunnycloud/i18n"/>
+	<filter root="/apps/sunnycloud/pages"/>
+	<filter root="/apps/sunnycloud/static-templates"/>
 </workspaceFilter>

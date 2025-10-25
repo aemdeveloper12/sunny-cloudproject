@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:EditConfig">
+    <cq:dropTargets jcr:primaryType="nt:unstructured">
+        <image
+            jcr:primaryType="cq:DropTargetConfig"
+            accept="[image/gif,image/jpeg,image/png,image/tiff,image/svg\\+xml]"
+            groups="[media]"
+            propertyName="./fileReference">
+            <parameters
+                jcr:primaryType="nt:unstructured"
+                dmPresetType="\0"
+                imageCrop="\0"
+                imageFromPageImage="false"
+                imageMap="\0"
+                imageRotate="\0"
+                smartCropRendition="\0"/>
+        </image>
+    </cq:dropTargets>
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        configPath="inplaceEditingConfig"
+        editorType="title">
+        <inplaceEditingConfig
+            jcr:primaryType="nt:unstructured"
+            titleTag="[h1,h2,h3,h4,h5,h6]"/>
+    </cq:inplaceEditing>
+    <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afterdelete="REFRESH_PAGE"
+        afteredit="REFRESH_PAGE"
+        afterInsert="REFRESH_SELF"/>
+</jcr:root>
