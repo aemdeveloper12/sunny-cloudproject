@@ -1,0 +1,154 @@
+<!-- Title -->
+<h2 class="hero-title">${properties.title}</h2>
+
+<!-- Hero Image with Form Overlay -->
+<div class="form-hero-wrapper">
+  
+  <!-- Background Image -->
+  <div class="hero-bg" style="background-image: url(${properties.imagepath @ context='uri'});"></div>
+
+  <!-- Overlay Form -->
+  <div class="hero-overlay">
+    <div class="hero-form">
+    <h1>${properties.formTitle}</h1>
+      
+      <form>
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter Email" value="${properties.email @ context='attribute'}">
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Password" value="${properties.password @ context='attribute'}">
+        
+        <button class="btn">${properties.buttonText}</button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Description below the hero section -->
+<p class="hero-description">${properties.description}</p>
+
+<!-- Inline Styles -->
+<style>
+/* Page Title */
+.hero-title {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* Wrapper */
+.form-hero-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Background Image */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Center form on the image */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Align form to right side like W3Schools */
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* The white form box */
+.hero-form {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 4px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-form h1 {
+  margin-bottom: 15px;
+}
+
+/* Input Labels */
+.hero-form label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+/* Input Fields */
+.hero-form input[type=text],
+.hero-form input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.hero-form input[type=text]:focus,
+.hero-form input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Button */
+.hero-form .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.hero-form .btn:hover {
+  opacity: 1;
+}
+
+/* Description below the image */
+.hero-description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin-top: 15px;
+  color: #333;
+}
+
+/* Force visibility inside AEM author and publish modes */
+.formonheroimage h1,
+.formonheroimage label {
+  display: block !important;
+  visibility: visible !important;
+  color: #000 !important;
+  z-index: 10 !important;
+}
+
+</style>

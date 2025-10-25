@@ -1,0 +1,176 @@
+<div class="cmp-slideshow">
+  <h1>This is my slide show gallery component</h1>
+
+  <div class="cmp-slideshow__container">
+
+    <!-- Outer list: listOfImages -->
+    <sly data-sly-list.listOfImages="${resource.getChildren}">
+      <!-- Inner list: each child item inside multifield -->
+      <sly data-sly-repeat.item="${listOfImages.getChildren}">
+        <div class="cmp-slideshow__slide fade">
+          <div class="cmp-slideshow__number">${itemList.count} / ${itemList.last}</div>
+          <img src="${item.imagePath}" alt="${item.captionText}" class="cmp-slideshow__image" />
+          <div class="cmp-slideshow__caption">${item.captionText}</div>
+        </div>
+      </sly>
+    </sly>
+
+    <a class="cmp-slideshow__prev">❮</a>
+    <a class="cmp-slideshow__next">❯</a>
+  </div>
+
+  <div class="cmp-slideshow__dots"></div>
+</div>
+
+<style>
+  /* Scoped styles for slideshow component */
+  .cmp-slideshow {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+  }
+
+  .cmp-slideshow__container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .cmp-slideshow__slide {
+    display: none;
+    position: relative;
+  }
+
+  .cmp-slideshow__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
+  .cmp-slideshow__caption {
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .cmp-slideshow__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #f2f2f2;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Navigation buttons */
+  .cmp-slideshow__prev,
+  .cmp-slideshow__next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+    user-select: none;
+    transform: translateY(-50%);
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+
+  .cmp-slideshow__prev:hover,
+  .cmp-slideshow__next:hover {
+    background: rgba(0,0,0,0.7);
+  }
+
+  .cmp-slideshow__prev { left: 10px; }
+  .cmp-slideshow__next { right: 10px; }
+
+  /* Dots */
+  .cmp-slideshow__dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .cmp-slideshow__dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+
+  .cmp-slideshow__dot.active {
+    background-color: #717171;
+  }
+
+  /* Fade animation */
+  .fade {
+    animation: cmp-slideshow-fade 1s ease-in-out;
+  }
+
+  @keyframes cmp-slideshow-fade {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+  }
+</style>
+
+<script>
+  (function() {
+    document.addEventListener("DOMContentLoaded", function() {
+      // Select all slideshow instances on the page
+      const slideshows = document.querySelectorAll('.cmp-slideshow');
+
+      slideshows.forEach((slideshow) => {
+        const slides = slideshow.querySelectorAll('.cmp-slideshow__slide');
+        const prev = slideshow.querySelector('.cmp-slideshow__prev');
+        const next = slideshow.querySelector('.cmp-slideshow__next');
+        const dotsContainer = slideshow.querySelector('.cmp-slideshow__dots');
+        let current = 0;
+
+        // Create dots dynamically for each slideshow instance
+        slides.forEach((_, i) => {
+          const dot = document.createElement('span');
+          dot.classList.add('cmp-slideshow__dot');
+          dot.addEventListener('click', () => showSlide(i));
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.cmp-slideshow__dot');
+
+        function showSlide(n) {
+          slides.forEach(s => s.style.display = 'none');
+          dots.forEach(d => d.classList.remove('active'));
+          slides[n].style.display = 'block';
+          dots[n].classList.add('active');
+          current = n;
+        }
+
+        function changeSlide(step) {
+          current = (current + step + slides.length) % slides.length;
+          showSlide(current);
+        }
+
+        if (prev) prev.addEventListener('click', () => changeSlide(-1));
+        if (next) next.addEventListener('click', () => changeSlide(1));
+
+        // Initialize the first slide for each component
+        if (slides.length > 0) showSlide(0);
+      });
+    });
+  })();
+</script>

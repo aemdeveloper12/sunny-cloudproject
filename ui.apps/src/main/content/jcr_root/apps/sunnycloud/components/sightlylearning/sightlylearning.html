@@ -1,0 +1,69 @@
+<h1>This is my Sightly Component</h1>
+
+<!-- Implicit/Global Objects for HTL -->
+<h2>Dialog related Property: ${properties.listFrom}</h2>
+<h2>Title of the page: ${Pageproperties.jcr:title}</h2>
+<h2>Title of current/inherited page: ${inheritedPageProperties.jcr:title}</h2>
+
+<!--Sightly Comments -->
+
+<!-- Page title: ${currentPage.jcr:title} -->
+<!--/* The content of this comment will be removed from the output.
+This is not displayed onto the page
+This syntax is for multiline comments in sightly */-->
+
+<h1> Image Component Adding Via Data sly resource</h1>
+<div data-sly-resource="${'xyz' @ resourceType='bt-sample-project/components/image'}"> </div>
+
+
+<h1> Button Component Adding Via Data sly resource</h1>
+<div data-sly-resource="${'button1' @ resourceType='/apps/bt-sample-project/components/button'}"> </div>
+
+<div data-sly-resource="${'button2' @ resourceType='/apps/bt-sample-project/components/button'}"> </div>
+
+helooo${properties.listFrom}
+<sly data-sly-test="${properties.listFrom == 'variation1'}">
+
+<sly data-sly-include="variation1.html"></sly>
+
+</sly>
+
+<sly data-sly-test="${properties.listFrom == 'variation2'}">
+
+<sly data-sly-include="variation2.html"></sly>
+
+</sly>
+
+<h1>Learning Data Sly List Versus Data Sly Repeat</h1>
+
+Current Page Path: ${currentPage.getPath}
+
+<div style="background-color:green">
+
+<ul data-sly-list.object = ${currentPage.listChildren}>
+
+<li data-sly-test= ${objectList.first}>
+${object.name} :::: ${object.title} ::: ${objectList.count} ::: ${objectList.index} ::: First
+</li>
+
+<li data-sly-test= ${objectList.odd}>
+${object.name} :::: ${object.title} ::: ${objectList.count} ::: ${objectList.index}
+</li>
+
+<li data-sly-test= ${objectList.last}>
+${object.name} :::: ${object.title} ::: ${objectList.count} ::: ${objectList.index} ::: Last
+</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+

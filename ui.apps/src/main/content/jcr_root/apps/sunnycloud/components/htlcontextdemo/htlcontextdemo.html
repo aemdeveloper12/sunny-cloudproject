@@ -1,0 +1,101 @@
+<sly data-sly-use.button="/apps/sunnycloud/components/htlcontextdemo/button.html"></sly>
+<h1 data-sly-call="${button.ctaButton @ctaLink=properties.link, ctaText=properties.text}"></h1>
+
+<div class="context-demo" style="padding: 20px; font-family: Arial;">
+  <h2>HTL Context Demo</h2>
+
+  <!-- 1. HTML context -->
+  <h3>1. context='html'</h3>
+  <p>
+    ${'<b>This will render bold</b>' @context='html'}
+  </p>
+
+  <!-- 2. Text context -->
+  <h3>2. context='text'</h3>
+  <p>
+    ${'<b>This will NOT render as bold</b>' @ context='text'}
+  </p>
+
+  <!-- 3. Element Name -->
+  <h3>3. context='elementName'</h3>
+  <h6 data-sly-element="${'h2' @ context='elementName'}">Title Text</h6>
+
+  <!-- 4. Attribute Name -->
+  <h3>4. context='attributeName'</h3>
+  <div data-${'customAttr' @ context='attributeName'}="demo">
+    Custom attribute added safely
+  </div>
+
+  <!-- 5. Attribute -->
+  <h3>5. context='attribute'</h3>
+  <img src="/content/dam/demo.jpg" alt="${'This is an <image>' @ context='attribute'}" />
+
+  <!-- 6. URI -->
+  <h3>6. context='uri'</h3>
+  <a href="${'https://www.adobe.com' @ context='uri'}" target="_blank">Open Adobe</a>
+
+  <!-- 7. Script Token -->
+  <h3>7. context='scriptToken'</h3>
+  <script>
+    var myCount = ${'123' @ context='scriptToken'};
+  </script>
+
+  <!-- 8. Script String -->
+  <h3>8. context='scriptString'</h3>
+  <script>
+    function methodforContext() {
+      var variable1 = "${'test hello data' @ context='scriptString'}";
+      alert("Hello, I am from JavaScript " + variable1);
+    }
+  </script>
+
+  <input type="button" onclick="${'methodforContext' @ context='scriptToken'}()" value="Submit" />
+
+  <!-- 9. Script Comment -->
+  <h3>9. context='scriptComment'</h3>
+  <script>
+    /* ${'safe comment / alert(1); /' @ context='scriptComment'} */
+  </script>
+
+  <!-- 10. Script RegExp -->
+  <h3>10. context='scriptRegExp'</h3>
+  <script>
+    var re = new RegExp("${'[A-Z]+' @ context='scriptRegExp'}");
+    console.log('Regex test:', re.test('HELLO'));
+  </script>
+
+  <!-- 11. Style Token -->
+  <h3>11. context='styleToken'</h3>
+  <div style="color: ${'orange' @ context='styleToken'}; font-weight: bold;">
+    Orange text
+  </div>
+
+  <!-- 12. Style String -->
+  <h3>12. context='styleString'</h3>
+  <div style="font-family: ${'Brush Script MT, Arial, Helvetica' @ context='styleString'};">
+    This text uses custom font-family
+  </div>
+
+  <!-- 13. Style Comment -->
+  <h3>13. context='styleComment'</h3>
+  <style>
+    /* ${'Safe comment / body { color:red; } /' @ context='styleComment'} */
+  </style>
+
+  <!-- 14. Comment -->
+  <h3>14. context='comment'</h3>
+  <!-- ${'This is a safe comment inside HTML comment' @ context='comment'} -->
+
+  <!-- 15. Number -->
+  <h3>15. context='number'</h3>
+  <p>Valid number output: ${'12345' @ context='number'}</p>
+  <p>Invalid number (will output 0): ${'abc' @ context='number'}</p>
+
+  <!-- 16. Unsafe -->
+  <h3>16. context='unsafe'</h3>
+  <p>
+    ${'<img src=x>' @ context='unsafe'}
+  </p>
+  <p style="color:red;"> Only for demo — never use 'unsafe' in production!</p>
+
+</div>

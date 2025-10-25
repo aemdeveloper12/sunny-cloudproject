@@ -1,0 +1,54 @@
+# -----------------------------
+# Maven build output
+# -----------------------------
+target/
+*/target/
+
+# -----------------------------
+# IntelliJ IDEA
+# -----------------------------
+.idea/
+*.iml
+
+# -----------------------------
+# AEM-generated content
+# -----------------------------
+ui.apps/src/main/content/jcr_root/var/
+ui.apps/src/main/content/jcr_root/tmp/
+ui.apps/src/main/content/jcr_root/etc/
+ui.apps/src/main/content/jcr_root/home/
+ui.apps/src/main/content/jcr_root/system/
+ui.apps/src/main/content/jcr_root/libs/
+
+*.bak
+*.log
+
+# -----------------------------
+# Dispatcher build artifacts
+# -----------------------------
+dispatcher/src/build/
+dispatcher/target/
+
+# -----------------------------
+# Node / Frontend build files
+# -----------------------------
+**/node_modules/
+**/dist/
+**/build/
+**/.cache/
+**/.parcel-cache/
+**/.next/
+**/.nuxt/
+**/.vite/
+**/.angular/
+**/.output/
+**/coverage/
+
+# Ignore local Node.js binaries and environments
+**/node/
+
+# -----------------------------
+# OS junk files
+# -----------------------------
+.DS_Store
+Thumbs.db

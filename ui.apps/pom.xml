@@ -93,6 +93,7 @@
                                 <allowedExpressionOption>decoration</allowedExpressionOption>
                                 <allowedExpressionOption>decorationTagName</allowedExpressionOption>
                                 <allowedExpressionOption>wcmmode</allowedExpressionOption>
+                                <allowedExpressionOption>categories</allowedExpressionOption>
                             </allowedExpressionOptions>
                         </configuration>
                     </execution>

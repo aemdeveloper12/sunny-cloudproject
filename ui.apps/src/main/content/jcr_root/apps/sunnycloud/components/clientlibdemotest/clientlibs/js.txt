@@ -1,0 +1,3 @@
+#base=js
+
+clientlib_demo.js
