@@ -1,0 +1,19 @@
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='clientlibdemo.test', async=true}"/>
+</sly>
+
+
+
+<h2>${properties.title}</h2>
+<p>${properties.text @context='html'}</p>
+
+<div class="container">
+  <img src="${properties.path}" alt="Snow" style="width:100%;">
+  <div class="bottom-left">${properties.leftside_below_text}</div>
+  <div class="top-left">Top Left</div>
+  <div class="top-right">Top Right</div>
+  <div class="bottom-right">Bottom Right</div>
+  <div class="centered">${properties.centerText}</div>
+</div>
+
+
