@@ -1,0 +1,155 @@
+<h1>This is my Custom Carousel component</h1>
+
+<sly data-sly-list.listOfSlides="${resource.getChildren}">
+    <!-- Scoped carousel wrapper -->
+    <div class="custom-carousel-wrapper">
+
+        <h2>Carousel Example</h2>
+
+        <!-- Unique carousel ID per instance -->
+        <sly data-sly-set.carouselId="customCarousel${itemList.count}" />
+
+        <div id="${carouselId}" class="custom-carousel">
+
+            <!-- Indicators -->
+            <ol class="custom-carousel-indicators">
+                <sly data-sly-list.slide="${listOfSlides.getChildren}">
+                    <li class="custom-carousel-dot ${slideList.first?'active':''}" data-index="${slideList.index}"></li>
+                </sly>
+            </ol>
+
+            <!-- Slides -->
+            <div class="custom-carousel-inner">
+                <sly data-sly-list.slide="${listOfSlides.getChildren}">
+                    <div class="custom-carousel-item ${slideList.first?'active':''}">
+                        <img src="${slide.imagePath}" alt="${slide.captionText}" class="custom-carousel-image">
+                    </div>
+                </sly>
+            </div>
+
+            <!-- Controls -->
+            <a class="custom-carousel-prev">&#10094;</a>
+            <a class="custom-carousel-next">&#10095;</a>
+
+        </div>
+    </div>
+</sly>
+
+<style>
+    /* Wrapper for carousel */
+    .custom-carousel-wrapper {
+      max-width: 100%;
+      overflow: hidden;
+      margin-bottom: 30px;
+      position: relative;
+      font-family: Verdana, sans-serif;
+    }
+
+    /* Slides container */
+    .custom-carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Slide items */
+    .custom-carousel-item {
+      display: none;
+      width: 100%;
+      position: relative;
+    }
+
+    .custom-carousel-item.active {
+      display: block;
+    }
+
+    /* Images */
+    .custom-carousel-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    /* Navigation arrows */
+    .custom-carousel-prev,
+    .custom-carousel-next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 12px;
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 50%;
+      user-select: none;
+      z-index: 10;
+    }
+
+    .custom-carousel-prev { left: 10px; }
+    .custom-carousel-next { right: 10px; }
+
+    .custom-carousel-prev:hover,
+    .custom-carousel-next:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    /* Indicators/dots */
+    .custom-carousel-indicators {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .custom-carousel-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 3px;
+      background: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0.9;
+      transition: background 0.3s ease;
+    }
+
+    .custom-carousel-dot.active {
+      background: #717171;
+    }
+</style>
+
+<script>
+    (function() {
+      document.addEventListener("DOMContentLoaded", function() {
+        const wrappers = document.querySelectorAll('.custom-carousel-wrapper');
+        wrappers.forEach(wrapper => {
+          const slides = wrapper.querySelectorAll('.custom-carousel-item');
+          const dots = wrapper.querySelectorAll('.custom-carousel-dot');
+          const prev = wrapper.querySelector('.custom-carousel-prev');
+          const next = wrapper.querySelector('.custom-carousel-next');
+          let current = 0;
+
+          function showSlide(n) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+            current = n;
+          }
+
+          dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+          prev.addEventListener('click', () => showSlide((current - 1 + slides.length) % slides.length));
+          next.addEventListener('click', () => showSlide((current + 1) % slides.length));
+
+          if(slides.length > 0) showSlide(0);
+        });
+      });
+    })();
+</script>
