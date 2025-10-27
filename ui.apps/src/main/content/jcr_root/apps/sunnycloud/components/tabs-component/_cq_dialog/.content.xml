@@ -1,0 +1,1629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="day17 practise"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab1"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pathbrowser
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldLabel="path browser"
+                                                name="path"/>
+                                            <textarea
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="description"
+                                                name="des"/>
+                                            <textfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="username"
+                                                name="./entertext"/>
+                                            <numberfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="enter your age"/>
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="add rich text"
+                                                name="./text"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="bold,italic"/>
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-"/>
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="modifylink,unlink"/>
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <misctools jcr:primaryType="nt:unstructured">
+                                                        <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                                            <chars jcr:primaryType="nt:unstructured">
+                                                                <default_copyright
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;copy;"
+                                                                    name="copyright"/>
+                                                                <default_euro
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;euro;"
+                                                                    name="euro"/>
+                                                                <default_registered
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;reg;"
+                                                                    name="registered"/>
+                                                                <default_trademark
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;trade;"
+                                                                    name="trademark"/>
+                                                            </chars>
+                                                        </specialCharsConfig>
+                                                    </misctools>
+                                                    <paraformat
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+                                                        <formats jcr:primaryType="nt:unstructured">
+                                                            <default_p
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Paragraph"
+                                                                tag="p"/>
+                                                            <default_h1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 1"
+                                                                tag="h1"/>
+                                                            <default_h2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 2"
+                                                                tag="h2"/>
+                                                            <default_h3
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 3"
+                                                                tag="h3"/>
+                                                            <default_h4
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 4"
+                                                                tag="h4"/>
+                                                            <default_h5
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 5"
+                                                                tag="h5"/>
+                                                            <default_h6
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 6"
+                                                                tag="h6"/>
+                                                            <default_blockquote
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Quote"
+                                                                tag="blockquote"/>
+                                                            <default_pre
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Preformatted"
+                                                                tag="pre"/>
+                                                        </formats>
+                                                    </paraformat>
+                                                    <table
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-">
+                                                        <hiddenHeaderConfig
+                                                            jcr:primaryType="nt:unstructured"
+                                                            hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                                            hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                                    </table>
+                                                    <tracklinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                            <popovers jcr:primaryType="nt:unstructured">
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                                    ref="justify"/>
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                    ref="lists"/>
+                                                                <paraformat
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                                    ref="paraformat"/>
+                                                            </popovers>
+                                                        </inline>
+                                                        <tableEditOptions
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                                    </cui>
+                                                </uiSettings>
+                                            </text>
+                                            <image jcr:primaryType="nt:unstructured">
+                                                <imageFromPageImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${true}"
+                                                    fieldDescription="Use the featured image defined in the properties of the linked page, or in the properties of the current page when no link is defined."
+                                                    name="./imageFromPageImage"
+                                                    text="Inherit featured image from page"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <pageImageThumbnail
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/editor/dialog/pageimagethumbnail/v1/pageimagethumbnail"/>
+                                                <file
+                                                    granite:class="cmp-image__editor-file-upload"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    class="cq-droptarget"
+                                                    enableNextGenDynamicMedia="{Boolean}true"
+                                                    fileNameParameter="./fileName"
+                                                    fileReferenceParameter="./fileReference"
+                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                    name="./file"/>
+                                                <alternativeGroup
+                                                    granite:class="cmp-image__editor-alt"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <alt
+                                                            granite:class="cmp-image__editor-alt-text"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Textual alternative of the meaning or function of the image, for visually impaired readers."
+                                                            fieldLabel="Alternative text for accessibility"
+                                                            name="./alt"
+                                                            required="{Boolean}true"/>
+                                                        <altValueFromPageImage
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="true"
+                                                            fieldDescription="Use the description defined on the referenced asset, or the alternative text defined in the page properties."
+                                                            name="./altValueFromPageImage"
+                                                            text="Inherit alternative text from page"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                        <altValueFromDAM
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="${not empty cqDesign.altValueFromDAM ? cqDesign.altValueFromDAM : true}"
+                                                            fieldDescription="When checked, populate the image's alt attribute with the value of the dc:description metadata in DAM."
+                                                            name="./altValueFromDAM"
+                                                            text="Inherit from description of asset"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                    </items>
+                                                </alternativeGroup>
+                                                <decorative
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${not empty cqDesign.isDecorative ? cqDesign.isDecorative : false}"
+                                                    fieldDescription="If the image is mostly decorative and doesn't convey additional meaning to a visitor, then it might be acceptable to not provide an alternative text, which will make the image ignored by assistive technology like screen readers."
+                                                    name="./isDecorative"
+                                                    text="Don’t provide an alternative text"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <dynamicmediaGroup
+                                                    granite:class="cmp-image__editor-dynamicmedia"
+                                                    granite:hide="${!cqDesign.enableDmFeatures}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <dmpresettypecontainer
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <presettype
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                    deleteHint="{Boolean}true"
+                                                                    fieldDescription="Select either an Image Preset or Smart Crop rendition."
+                                                                    fieldLabel="Preset Type"
+                                                                    name="./dmPresetType"
+                                                                    text="Preset Type"
+                                                                    wrapperClass="cmp-image__editor-dynamicmedia-presettype">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <option1
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            checked="{Boolean}true"
+                                                                            text="Image Preset"
+                                                                            value="imagePreset"/>
+                                                                        <option2
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Smart Crop"
+                                                                            value="smartCrop"/>
+                                                                    </items>
+                                                                </presettype>
+                                                            </items>
+                                                        </dmpresettypecontainer>
+                                                        <imagepreset
+                                                            granite:class="cmp-image__editor-dynamicmedia-imagepreset"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Image Preset to use when rendering image."
+                                                            fieldLabel="Image Preset"
+                                                            name="./imagePreset">
+                                                            <datasource
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="dam/components/scene7/common/imagepresetdatasource"/>
+                                                        </imagepreset>
+                                                        <smartcroprenditions
+                                                            granite:class="cmp-image__editor-dynamicmedia-smartcroprendition"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Select Auto for Dynamic Media to decide the best rendition. Else select a specific smart crop rendition."
+                                                            fieldLabel="Rendition"
+                                                            name="./smartCropRendition"/>
+                                                        <imageModifiers
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Additional Dynamic Media Image Serving commands separated by '&amp;'.Field gives complete flexibility to change image effects."
+                                                            fieldLabel="Image Modifiers"
+                                                            name="./imageModifiers"/>
+                                                    </items>
+                                                </dynamicmediaGroup>
+                                                <disableLazyLoading
+                                                    granite:hide="${cqDesign.disableLazyLoading}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    deleteHint="{Boolean}true"
+                                                    fieldDescription="When checked, image will be loaded eagerly, regardless of if the image is currently visible by the user."
+                                                    name="./disableLazyLoading"
+                                                    text="Disable lazy loading"
+                                                    value="{Boolean}true"/>
+                                            </image>
+                                            <checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./checkbox"
+                                                text="checkbox"
+                                                uncheckedValue="{Boolean}true"
+                                                value="{Boolean}true"/>
+                                            <select_x0020_dropdown
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="select options"
+                                                name="./selectFrom">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="children"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </select_x0020_dropdown>
+                                            <radiobuttons
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                fieldLabel="select options"
+                                                name="./radio">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="in"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </radiobuttons>
+                                            <datepicker
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                fieldLabel="selectdate"
+                                                name="./selectddate"
+                                                required="{Boolean}true"/>
+                                            <file
+                                                granite:class="cmp-image__editor-file-upload"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                class="cq-droptarget"
+                                                enableNextGenDynamicMedia="{Boolean}true"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./fileReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                name="./file"/>
+                                            <pathfield
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="pathfield"
+                                                rootPath="/content/sunnycloud"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab1>
+                    <tab2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab2"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pathbrowser
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldLabel="path browser"
+                                                name="path1"/>
+                                            <textarea
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="description"
+                                                name="description"/>
+                                            <textfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="username"
+                                                name="./entertext1"/>
+                                            <numberfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="enter your age"/>
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="add rich text"
+                                                name="./text"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="bold,italic"/>
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-"/>
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="modifylink,unlink"/>
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <misctools jcr:primaryType="nt:unstructured">
+                                                        <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                                            <chars jcr:primaryType="nt:unstructured">
+                                                                <default_copyright
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;copy;"
+                                                                    name="copyright"/>
+                                                                <default_euro
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;euro;"
+                                                                    name="euro"/>
+                                                                <default_registered
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;reg;"
+                                                                    name="registered"/>
+                                                                <default_trademark
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;trade;"
+                                                                    name="trademark"/>
+                                                            </chars>
+                                                        </specialCharsConfig>
+                                                    </misctools>
+                                                    <paraformat
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+                                                        <formats jcr:primaryType="nt:unstructured">
+                                                            <default_p
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Paragraph"
+                                                                tag="p"/>
+                                                            <default_h1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 1"
+                                                                tag="h1"/>
+                                                            <default_h2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 2"
+                                                                tag="h2"/>
+                                                            <default_h3
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 3"
+                                                                tag="h3"/>
+                                                            <default_h4
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 4"
+                                                                tag="h4"/>
+                                                            <default_h5
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 5"
+                                                                tag="h5"/>
+                                                            <default_h6
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 6"
+                                                                tag="h6"/>
+                                                            <default_blockquote
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Quote"
+                                                                tag="blockquote"/>
+                                                            <default_pre
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Preformatted"
+                                                                tag="pre"/>
+                                                        </formats>
+                                                    </paraformat>
+                                                    <table
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-">
+                                                        <hiddenHeaderConfig
+                                                            jcr:primaryType="nt:unstructured"
+                                                            hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                                            hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                                    </table>
+                                                    <tracklinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                            <popovers jcr:primaryType="nt:unstructured">
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                                    ref="justify"/>
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                    ref="lists"/>
+                                                                <paraformat
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                                    ref="paraformat"/>
+                                                            </popovers>
+                                                        </inline>
+                                                        <tableEditOptions
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                                    </cui>
+                                                </uiSettings>
+                                            </text>
+                                            <image jcr:primaryType="nt:unstructured">
+                                                <imageFromPageImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${true}"
+                                                    fieldDescription="Use the featured image defined in the properties of the linked page, or in the properties of the current page when no link is defined."
+                                                    name="./imageFromPageImage"
+                                                    text="Inherit featured image from page"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <pageImageThumbnail
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/editor/dialog/pageimagethumbnail/v1/pageimagethumbnail"/>
+                                                <file
+                                                    granite:class="cmp-image__editor-file-upload"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    class="cq-droptarget"
+                                                    enableNextGenDynamicMedia="{Boolean}true"
+                                                    fileNameParameter="./fileName"
+                                                    fileReferenceParameter="./fileReference"
+                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                    name="./file"/>
+                                                <alternativeGroup
+                                                    granite:class="cmp-image__editor-alt"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <alt
+                                                            granite:class="cmp-image__editor-alt-text"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Textual alternative of the meaning or function of the image, for visually impaired readers."
+                                                            fieldLabel="Alternative text for accessibility"
+                                                            name="./alt"
+                                                            required="{Boolean}true"/>
+                                                        <altValueFromPageImage
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="true"
+                                                            fieldDescription="Use the description defined on the referenced asset, or the alternative text defined in the page properties."
+                                                            name="./altValueFromPageImage"
+                                                            text="Inherit alternative text from page"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                        <altValueFromDAM
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="${not empty cqDesign.altValueFromDAM ? cqDesign.altValueFromDAM : true}"
+                                                            fieldDescription="When checked, populate the image's alt attribute with the value of the dc:description metadata in DAM."
+                                                            name="./altValueFromDAM"
+                                                            text="Inherit from description of asset"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                    </items>
+                                                </alternativeGroup>
+                                                <decorative
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${not empty cqDesign.isDecorative ? cqDesign.isDecorative : false}"
+                                                    fieldDescription="If the image is mostly decorative and doesn't convey additional meaning to a visitor, then it might be acceptable to not provide an alternative text, which will make the image ignored by assistive technology like screen readers."
+                                                    name="./isDecorative"
+                                                    text="Don’t provide an alternative text"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <dynamicmediaGroup
+                                                    granite:class="cmp-image__editor-dynamicmedia"
+                                                    granite:hide="${!cqDesign.enableDmFeatures}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <dmpresettypecontainer
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <presettype
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                    deleteHint="{Boolean}true"
+                                                                    fieldDescription="Select either an Image Preset or Smart Crop rendition."
+                                                                    fieldLabel="Preset Type"
+                                                                    name="./dmPresetType"
+                                                                    text="Preset Type"
+                                                                    wrapperClass="cmp-image__editor-dynamicmedia-presettype">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <option1
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            checked="{Boolean}true"
+                                                                            text="Image Preset"
+                                                                            value="imagePreset"/>
+                                                                        <option2
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Smart Crop"
+                                                                            value="smartCrop"/>
+                                                                    </items>
+                                                                </presettype>
+                                                            </items>
+                                                        </dmpresettypecontainer>
+                                                        <imagepreset
+                                                            granite:class="cmp-image__editor-dynamicmedia-imagepreset"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Image Preset to use when rendering image."
+                                                            fieldLabel="Image Preset"
+                                                            name="./imagePreset">
+                                                            <datasource
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="dam/components/scene7/common/imagepresetdatasource"/>
+                                                        </imagepreset>
+                                                        <smartcroprenditions
+                                                            granite:class="cmp-image__editor-dynamicmedia-smartcroprendition"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Select Auto for Dynamic Media to decide the best rendition. Else select a specific smart crop rendition."
+                                                            fieldLabel="Rendition"
+                                                            name="./smartCropRendition"/>
+                                                        <imageModifiers
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Additional Dynamic Media Image Serving commands separated by '&amp;'.Field gives complete flexibility to change image effects."
+                                                            fieldLabel="Image Modifiers"
+                                                            name="./imageModifiers"/>
+                                                    </items>
+                                                </dynamicmediaGroup>
+                                                <disableLazyLoading
+                                                    granite:hide="${cqDesign.disableLazyLoading}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    deleteHint="{Boolean}true"
+                                                    fieldDescription="When checked, image will be loaded eagerly, regardless of if the image is currently visible by the user."
+                                                    name="./disableLazyLoading"
+                                                    text="Disable lazy loading"
+                                                    value="{Boolean}true"/>
+                                            </image>
+                                            <checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./checkbox"
+                                                text="checkbox"
+                                                uncheckedValue="{Boolean}true"
+                                                value="{Boolean}true"/>
+                                            <select_x0020_dropdown
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="select options"
+                                                name="./selectFrom">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="children"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </select_x0020_dropdown>
+                                            <radiobuttons
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                fieldLabel="select options"
+                                                name="./radio">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="in"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </radiobuttons>
+                                            <datepicker
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                fieldLabel="selectdate"
+                                                name="./selectddate"
+                                                required="{Boolean}true"/>
+                                            <file
+                                                granite:class="cmp-image__editor-file-upload"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                class="cq-droptarget"
+                                                enableNextGenDynamicMedia="{Boolean}true"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./fileReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                name="./file"/>
+                                            <pathfield
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="pathfield"
+                                                rootPath="/content/sunnycloud"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab2>
+                    <tab3
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab3"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pathbrowser
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldLabel="path browser"
+                                                name="path1"/>
+                                            <textarea
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="description"
+                                                name="description"/>
+                                            <textfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="username"
+                                                name="./entertext1"/>
+                                            <numberfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="enter your age"/>
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="add rich text"
+                                                name="./text"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="bold,italic"/>
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-"/>
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="modifylink,unlink"/>
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <misctools jcr:primaryType="nt:unstructured">
+                                                        <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                                            <chars jcr:primaryType="nt:unstructured">
+                                                                <default_copyright
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;copy;"
+                                                                    name="copyright"/>
+                                                                <default_euro
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;euro;"
+                                                                    name="euro"/>
+                                                                <default_registered
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;reg;"
+                                                                    name="registered"/>
+                                                                <default_trademark
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;trade;"
+                                                                    name="trademark"/>
+                                                            </chars>
+                                                        </specialCharsConfig>
+                                                    </misctools>
+                                                    <paraformat
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+                                                        <formats jcr:primaryType="nt:unstructured">
+                                                            <default_p
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Paragraph"
+                                                                tag="p"/>
+                                                            <default_h1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 1"
+                                                                tag="h1"/>
+                                                            <default_h2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 2"
+                                                                tag="h2"/>
+                                                            <default_h3
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 3"
+                                                                tag="h3"/>
+                                                            <default_h4
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 4"
+                                                                tag="h4"/>
+                                                            <default_h5
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 5"
+                                                                tag="h5"/>
+                                                            <default_h6
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 6"
+                                                                tag="h6"/>
+                                                            <default_blockquote
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Quote"
+                                                                tag="blockquote"/>
+                                                            <default_pre
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Preformatted"
+                                                                tag="pre"/>
+                                                        </formats>
+                                                    </paraformat>
+                                                    <table
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-">
+                                                        <hiddenHeaderConfig
+                                                            jcr:primaryType="nt:unstructured"
+                                                            hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                                            hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                                    </table>
+                                                    <tracklinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                            <popovers jcr:primaryType="nt:unstructured">
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                                    ref="justify"/>
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                    ref="lists"/>
+                                                                <paraformat
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                                    ref="paraformat"/>
+                                                            </popovers>
+                                                        </inline>
+                                                        <tableEditOptions
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                                    </cui>
+                                                </uiSettings>
+                                            </text>
+                                            <image jcr:primaryType="nt:unstructured">
+                                                <imageFromPageImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${true}"
+                                                    fieldDescription="Use the featured image defined in the properties of the linked page, or in the properties of the current page when no link is defined."
+                                                    name="./imageFromPageImage"
+                                                    text="Inherit featured image from page"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <pageImageThumbnail
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/editor/dialog/pageimagethumbnail/v1/pageimagethumbnail"/>
+                                                <file
+                                                    granite:class="cmp-image__editor-file-upload"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    class="cq-droptarget"
+                                                    enableNextGenDynamicMedia="{Boolean}true"
+                                                    fileNameParameter="./fileName"
+                                                    fileReferenceParameter="./fileReference"
+                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                    name="./file"/>
+                                                <alternativeGroup
+                                                    granite:class="cmp-image__editor-alt"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <alt
+                                                            granite:class="cmp-image__editor-alt-text"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Textual alternative of the meaning or function of the image, for visually impaired readers."
+                                                            fieldLabel="Alternative text for accessibility"
+                                                            name="./alt"
+                                                            required="{Boolean}true"/>
+                                                        <altValueFromPageImage
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="true"
+                                                            fieldDescription="Use the description defined on the referenced asset, or the alternative text defined in the page properties."
+                                                            name="./altValueFromPageImage"
+                                                            text="Inherit alternative text from page"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                        <altValueFromDAM
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="${not empty cqDesign.altValueFromDAM ? cqDesign.altValueFromDAM : true}"
+                                                            fieldDescription="When checked, populate the image's alt attribute with the value of the dc:description metadata in DAM."
+                                                            name="./altValueFromDAM"
+                                                            text="Inherit from description of asset"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                    </items>
+                                                </alternativeGroup>
+                                                <decorative
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${not empty cqDesign.isDecorative ? cqDesign.isDecorative : false}"
+                                                    fieldDescription="If the image is mostly decorative and doesn't convey additional meaning to a visitor, then it might be acceptable to not provide an alternative text, which will make the image ignored by assistive technology like screen readers."
+                                                    name="./isDecorative"
+                                                    text="Don’t provide an alternative text"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <dynamicmediaGroup
+                                                    granite:class="cmp-image__editor-dynamicmedia"
+                                                    granite:hide="${!cqDesign.enableDmFeatures}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <dmpresettypecontainer
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <presettype
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                    deleteHint="{Boolean}true"
+                                                                    fieldDescription="Select either an Image Preset or Smart Crop rendition."
+                                                                    fieldLabel="Preset Type"
+                                                                    name="./dmPresetType"
+                                                                    text="Preset Type"
+                                                                    wrapperClass="cmp-image__editor-dynamicmedia-presettype">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <option1
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            checked="{Boolean}true"
+                                                                            text="Image Preset"
+                                                                            value="imagePreset"/>
+                                                                        <option2
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Smart Crop"
+                                                                            value="smartCrop"/>
+                                                                    </items>
+                                                                </presettype>
+                                                            </items>
+                                                        </dmpresettypecontainer>
+                                                        <imagepreset
+                                                            granite:class="cmp-image__editor-dynamicmedia-imagepreset"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Image Preset to use when rendering image."
+                                                            fieldLabel="Image Preset"
+                                                            name="./imagePreset">
+                                                            <datasource
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="dam/components/scene7/common/imagepresetdatasource"/>
+                                                        </imagepreset>
+                                                        <smartcroprenditions
+                                                            granite:class="cmp-image__editor-dynamicmedia-smartcroprendition"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Select Auto for Dynamic Media to decide the best rendition. Else select a specific smart crop rendition."
+                                                            fieldLabel="Rendition"
+                                                            name="./smartCropRendition"/>
+                                                        <imageModifiers
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Additional Dynamic Media Image Serving commands separated by '&amp;'.Field gives complete flexibility to change image effects."
+                                                            fieldLabel="Image Modifiers"
+                                                            name="./imageModifiers"/>
+                                                    </items>
+                                                </dynamicmediaGroup>
+                                                <disableLazyLoading
+                                                    granite:hide="${cqDesign.disableLazyLoading}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    deleteHint="{Boolean}true"
+                                                    fieldDescription="When checked, image will be loaded eagerly, regardless of if the image is currently visible by the user."
+                                                    name="./disableLazyLoading"
+                                                    text="Disable lazy loading"
+                                                    value="{Boolean}true"/>
+                                            </image>
+                                            <checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./checkbox"
+                                                text="checkbox"
+                                                uncheckedValue="{Boolean}true"
+                                                value="{Boolean}true"/>
+                                            <select_x0020_dropdown
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="select options"
+                                                name="./selectFrom">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="children"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </select_x0020_dropdown>
+                                            <radiobuttons
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                fieldLabel="select options"
+                                                name="./radio">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="in"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </radiobuttons>
+                                            <datepicker
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                fieldLabel="selectdate"
+                                                name="./selectddate"
+                                                required="{Boolean}true"/>
+                                            <file
+                                                granite:class="cmp-image__editor-file-upload"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                class="cq-droptarget"
+                                                enableNextGenDynamicMedia="{Boolean}true"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./fileReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                name="./file"/>
+                                            <pathfield
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="pathfield"
+                                                rootPath="/content/sunnycloud"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab3>
+                    <tab4
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab4"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        name="./enteredpath">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pathbrowser
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldLabel="path browser"
+                                                name="path1"/>
+                                            <textarea
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="description"
+                                                name="description"/>
+                                            <textfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="username"
+                                                name="./entertext1"/>
+                                            <numberfiled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="enter your age"/>
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="add rich text"
+                                                name="./text"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="bold,italic"/>
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-"/>
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="modifylink,unlink"/>
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <misctools jcr:primaryType="nt:unstructured">
+                                                        <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                                            <chars jcr:primaryType="nt:unstructured">
+                                                                <default_copyright
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;copy;"
+                                                                    name="copyright"/>
+                                                                <default_euro
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;euro;"
+                                                                    name="euro"/>
+                                                                <default_registered
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;reg;"
+                                                                    name="registered"/>
+                                                                <default_trademark
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    entity="&amp;trade;"
+                                                                    name="trademark"/>
+                                                            </chars>
+                                                        </specialCharsConfig>
+                                                    </misctools>
+                                                    <paraformat
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+                                                        <formats jcr:primaryType="nt:unstructured">
+                                                            <default_p
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Paragraph"
+                                                                tag="p"/>
+                                                            <default_h1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 1"
+                                                                tag="h1"/>
+                                                            <default_h2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 2"
+                                                                tag="h2"/>
+                                                            <default_h3
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 3"
+                                                                tag="h3"/>
+                                                            <default_h4
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 4"
+                                                                tag="h4"/>
+                                                            <default_h5
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 5"
+                                                                tag="h5"/>
+                                                            <default_h6
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Heading 6"
+                                                                tag="h6"/>
+                                                            <default_blockquote
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Quote"
+                                                                tag="blockquote"/>
+                                                            <default_pre
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Preformatted"
+                                                                tag="pre"/>
+                                                        </formats>
+                                                    </paraformat>
+                                                    <table
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-">
+                                                        <hiddenHeaderConfig
+                                                            jcr:primaryType="nt:unstructured"
+                                                            hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                                            hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                                    </table>
+                                                    <tracklinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                            <popovers jcr:primaryType="nt:unstructured">
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                                    ref="justify"/>
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                    ref="lists"/>
+                                                                <paraformat
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                                    ref="paraformat"/>
+                                                            </popovers>
+                                                        </inline>
+                                                        <tableEditOptions
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                                    </cui>
+                                                </uiSettings>
+                                            </text>
+                                            <image jcr:primaryType="nt:unstructured">
+                                                <imageFromPageImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${true}"
+                                                    fieldDescription="Use the featured image defined in the properties of the linked page, or in the properties of the current page when no link is defined."
+                                                    name="./imageFromPageImage"
+                                                    text="Inherit featured image from page"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <pageImageThumbnail
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/editor/dialog/pageimagethumbnail/v1/pageimagethumbnail"/>
+                                                <file
+                                                    granite:class="cmp-image__editor-file-upload"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    class="cq-droptarget"
+                                                    enableNextGenDynamicMedia="{Boolean}true"
+                                                    fileNameParameter="./fileName"
+                                                    fileReferenceParameter="./fileReference"
+                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                    name="./file"/>
+                                                <alternativeGroup
+                                                    granite:class="cmp-image__editor-alt"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <alt
+                                                            granite:class="cmp-image__editor-alt-text"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Textual alternative of the meaning or function of the image, for visually impaired readers."
+                                                            fieldLabel="Alternative text for accessibility"
+                                                            name="./alt"
+                                                            required="{Boolean}true"/>
+                                                        <altValueFromPageImage
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="true"
+                                                            fieldDescription="Use the description defined on the referenced asset, or the alternative text defined in the page properties."
+                                                            name="./altValueFromPageImage"
+                                                            text="Inherit alternative text from page"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                        <altValueFromDAM
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="${not empty cqDesign.altValueFromDAM ? cqDesign.altValueFromDAM : true}"
+                                                            fieldDescription="When checked, populate the image's alt attribute with the value of the dc:description metadata in DAM."
+                                                            name="./altValueFromDAM"
+                                                            text="Inherit from description of asset"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                                    </items>
+                                                </alternativeGroup>
+                                                <decorative
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="${not empty cqDesign.isDecorative ? cqDesign.isDecorative : false}"
+                                                    fieldDescription="If the image is mostly decorative and doesn't convey additional meaning to a visitor, then it might be acceptable to not provide an alternative text, which will make the image ignored by assistive technology like screen readers."
+                                                    name="./isDecorative"
+                                                    text="Don’t provide an alternative text"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                                <dynamicmediaGroup
+                                                    granite:class="cmp-image__editor-dynamicmedia"
+                                                    granite:hide="${!cqDesign.enableDmFeatures}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <dmpresettypecontainer
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <presettype
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                    deleteHint="{Boolean}true"
+                                                                    fieldDescription="Select either an Image Preset or Smart Crop rendition."
+                                                                    fieldLabel="Preset Type"
+                                                                    name="./dmPresetType"
+                                                                    text="Preset Type"
+                                                                    wrapperClass="cmp-image__editor-dynamicmedia-presettype">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <option1
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            checked="{Boolean}true"
+                                                                            text="Image Preset"
+                                                                            value="imagePreset"/>
+                                                                        <option2
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Smart Crop"
+                                                                            value="smartCrop"/>
+                                                                    </items>
+                                                                </presettype>
+                                                            </items>
+                                                        </dmpresettypecontainer>
+                                                        <imagepreset
+                                                            granite:class="cmp-image__editor-dynamicmedia-imagepreset"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Image Preset to use when rendering image."
+                                                            fieldLabel="Image Preset"
+                                                            name="./imagePreset">
+                                                            <datasource
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="dam/components/scene7/common/imagepresetdatasource"/>
+                                                        </imagepreset>
+                                                        <smartcroprenditions
+                                                            granite:class="cmp-image__editor-dynamicmedia-smartcroprendition"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Select Auto for Dynamic Media to decide the best rendition. Else select a specific smart crop rendition."
+                                                            fieldLabel="Rendition"
+                                                            name="./smartCropRendition"/>
+                                                        <imageModifiers
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Additional Dynamic Media Image Serving commands separated by '&amp;'.Field gives complete flexibility to change image effects."
+                                                            fieldLabel="Image Modifiers"
+                                                            name="./imageModifiers"/>
+                                                    </items>
+                                                </dynamicmediaGroup>
+                                                <disableLazyLoading
+                                                    granite:hide="${cqDesign.disableLazyLoading}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    deleteHint="{Boolean}true"
+                                                    fieldDescription="When checked, image will be loaded eagerly, regardless of if the image is currently visible by the user."
+                                                    name="./disableLazyLoading"
+                                                    text="Disable lazy loading"
+                                                    value="{Boolean}true"/>
+                                            </image>
+                                            <checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./checkbox"
+                                                text="checkbox"
+                                                uncheckedValue="{Boolean}true"
+                                                value="{Boolean}true"/>
+                                            <select_x0020_dropdown
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="select options"
+                                                name="./selectFrom">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="children"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </select_x0020_dropdown>
+                                            <radiobuttons
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                fieldLabel="select options"
+                                                name="./radio">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="India"
+                                                        value="in"/>
+                                                    <static
+                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="AUS"
+                                                        value="aus"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="BAN"
+                                                        value="ban"/>
+                                                    <tags
+                                                        granite:hide="${cqDesign.disableTags}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling.resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        text="NZ"
+                                                        value="nz"/>
+                                                </items>
+                                            </radiobuttons>
+                                            <datepicker
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                fieldLabel="selectdate"
+                                                name="./selectddate"
+                                                required="{Boolean}true"/>
+                                            <file
+                                                granite:class="cmp-image__editor-file-upload"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                class="cq-droptarget"
+                                                enableNextGenDynamicMedia="{Boolean}true"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./fileReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                name="./file"/>
+                                            <pathfield
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="pathfield"
+                                                rootPath="/content/sunnycloud"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab4>
+                    <tab5
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab5"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <multifieldemo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/multifield"
+                                                fieldLabel=" enter text what you want">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="give pah"
+                                                    name="./givepath"/>
+                                            </multifieldemo>
+                                            <multicomposite
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                fieldLabel="composite enter text what you want">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    fieldLabel="give pah">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <textfiled
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="username"
+                                                                    name="./entertext"/>
+                                                                <pathfield
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                    fieldLabel="pathfield"
+                                                                    name="./compopath"
+                                                                    rootPath="/content/sunnycloud"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </multicomposite>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab5>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
