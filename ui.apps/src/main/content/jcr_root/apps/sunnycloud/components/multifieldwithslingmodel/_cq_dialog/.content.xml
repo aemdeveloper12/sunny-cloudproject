@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Multifields With Sling Model"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <multifields
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Multi field Demo"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <multifieldDemo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                fieldLabel="Multifield States">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="State Name"
+                                                    name="./states"/>
+                                            </multifieldDemo>
+                                            <multicountryandcurrency
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="true"
+                                                fieldLabel="Multi Countries and Currencies field">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./multicountryandcurrency">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <country
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Country Name"
+                                                                    name="country"/>
+                                                                <currency
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                    fieldLabel="Currency Symbol"
+                                                                    name="currency"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </multicountryandcurrency>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </multifields>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

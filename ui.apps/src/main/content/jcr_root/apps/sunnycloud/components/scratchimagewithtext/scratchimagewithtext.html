@@ -37,15 +37,20 @@
 }
 </style>
 
+<sly data-sly-use.model="${'com.training.core.models.ScratchImageWithTextModel'}"></sly>
 
-<h2>${properties.title}</h2>
-<p>${properties.richtext @context='html'}</p>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" >
+  <sly data-sly-call="${templates.placeholder @ isEmpty = !model.name}"></sly>
+</sly>
+
+<h2>${model.name}</h2>
+<p>${model.richtext @context='html'}</p>
 
 <div class="container">
-  <img src="${properties.path}" alt="Snow" style="width:100%;">
-  <div class="bottom-left">${properties.bottomlefttext}</div>
-  <div class="top-left">${properties.toplefttext}</div>
-  <div class="top-right">${properties.toprighttext}</div>
-  <div class="bottom-right">${properties.bottomrighttext}</div>
-  <div class="centered">${properties.centeredtext}</div>
+  <img src="${model.path}" alt="" style="width:100%;">
+  <div class="bottom-left">${model.bottomlefttext}</div>
+  <div class="top-left">${model.toplefttext}</div>
+  <div class="top-right">${model.toprighttext}</div>
+  <div class="bottom-right">${model.bottomrighttext}</div>
+  <div class="centered">${model.centeredtext}</div>
 </div>
