@@ -1,0 +1,24 @@
+<h1>This is Multifields component with Sling Model</h1>
+<!--/*
+
+Cq:Dialog
+
+List of States ---- MultiField -- Array of Strings
+List of Countries with Currency- Multi Multi/ Multi Composite Field - Child Resource - List of Maps
+
+ */-->
+
+<h2> List of States</h2>
+
+<sly data-sly-use.multiModel="${'com.training.core.models.MultiFieldWithSlingModel'}"></sly>
+<ul data-sly-list="${multiModel.states}">
+    <li>
+        State: ${item}
+    </li>
+</ul>
+
+<h2>List of Countries and Currencies</h2>
+<ul data-sly-list="${multiModel.multicountryandcurrency}">
+    <li>${item.country}:::: ${item.currency}
+    </li>
+</ul>
