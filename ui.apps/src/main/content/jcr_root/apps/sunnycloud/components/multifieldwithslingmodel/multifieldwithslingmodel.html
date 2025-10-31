@@ -10,15 +10,18 @@ List of Countries with Currency- Multi Multi/ Multi Composite Field - Child Reso
 
 <h2> List of States</h2>
 
-<sly data-sly-use.multiModel="${'com.training.core.models.MultiFieldWithSlingModel'}"></sly>
+<sly data-sly-use.multiModel="${'com.training.core.models.MultiFieldWithSlingModel' @value1='Hello', value2='AEM'}"></sly>
 <ul data-sly-list="${multiModel.states}">
     <li>
         State: ${item}
     </li>
 </ul>
+<p data-sly-test="${!multiModel.states}">No States found</p>
+<h1>New Data: ${multiModel.newData}</h1>
 
 <h2>List of Countries and Currencies</h2>
 <ul data-sly-list="${multiModel.multicountryandcurrency}">
     <li>${item.country}:::: ${item.currency}
     </li>
 </ul>
+<p data-sly-test="${!multiModel.multicountryandcurrency}">No country/currency data available</p>
