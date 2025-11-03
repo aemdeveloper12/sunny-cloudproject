@@ -285,6 +285,12 @@ Bundle-DocURL:
               <artifactId>aem-nodetypes</artifactId>
               <version>6.5.7.0</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <dependency>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.42</version>
+            </dependency>
           </dependencies>
         </plugin>
         <!-- AEM Analyser Plugin -->
