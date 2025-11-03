@@ -1,5 +1,6 @@
 package com.training.core.models;
 
+import lombok.Getter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
@@ -21,6 +22,7 @@ import java.util.List;
 
 @Model(adaptables= SlingHttpServletRequest.class,defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,resourceType = "sunnycloud/components/multifieldwithslingmodel")
 @Exporter(name="jackson",extensions ="json")
+@Getter
 public class MultiFieldWithSlingModel {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -57,15 +59,5 @@ public class MultiFieldWithSlingModel {
 
     }
 
-    public String[] getStates() {
-        return states;
-    }
 
-    public List<CountrywithCurrencies> getMulticountryandcurrency() {
-        return multicountryandcurrency;
-    }
-
-    public String getNewData() {
-        return newData;
-    }
 }
