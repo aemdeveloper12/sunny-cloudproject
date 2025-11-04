@@ -44,6 +44,7 @@
                         <configuration>
                             <bnd><![CDATA[
 Import-Package: javax.annotation;version=0.0.0,*
+Export-Package: com.training.core.models.*
                                 ]]></bnd>
                         </configuration>
                     </execution>
@@ -93,7 +94,7 @@ Import-Package: javax.annotation;version=0.0.0,*
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.core</artifactId>
-            <scope>test</scope>
+            <scope>provided</scope>
         </dependency>
 
 
@@ -145,6 +146,28 @@ Import-Package: javax.annotation;version=0.0.0,*
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.42</version>
+        </dependency>
+        <!-- Sling Models API -->
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.models.api</artifactId>
+            <version>1.4.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Sling Models Impl -->
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.models.impl</artifactId>
+            <version>1.4.14</version>
+            <scope>provided</scope>  <!-- ✅ changed from test to provided -->
+        </dependency>
+        <!-- Optional for Jackson exporter -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.12.3</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

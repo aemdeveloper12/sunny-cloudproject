@@ -1,0 +1,8 @@
+<sly data-sly-use.model="com.training.core.models.CustomTitleImpl"></sly>
+
+<sly data-sly-test="${model.linkURL}">
+    <a href="${model.linkURL}" target="_self">${model.text}</a>
+</sly>
+
+<!-- Render custom field -->
+<p>Extra Path: ${model.path}</p>
