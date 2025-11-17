@@ -1,0 +1,5 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "paymentUrl":"https://www.payment.client.gateway.com",
+  "jsonUrl":"https://dummyjson.com/todos/1"
+}

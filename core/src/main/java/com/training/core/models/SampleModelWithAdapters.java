@@ -2,6 +2,7 @@ package com.training.core.models;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.training.core.services.MyFirstServicePrintLog;
 import lombok.Getter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -9,6 +10,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
@@ -39,8 +41,13 @@ public class SampleModelWithAdapters implements SampleInterface {
     @SlingObject
     private ResourceResolver resourceResolver;
 
+    @OSGiService // @Inject
+    MyFirstServicePrintLog myFirstServicePrintLog;
+
     private String pageTitleViaSling;
     private  String pageTitleViaAEM;
+
+    private String stringFromService;
 
     @PostConstruct
     public void init(){
@@ -58,6 +65,9 @@ public class SampleModelWithAdapters implements SampleInterface {
 
                 // By Using Page API
                 pageTitleViaAEM= currentPage.getTitle();
+
+                // Assigning via Sling Model
+                stringFromService = myFirstServicePrintLog.PrintLog();
 
             }
         }
