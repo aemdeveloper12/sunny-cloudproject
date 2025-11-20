@@ -1,0 +1,44 @@
+<h1>Calling a Servlet via AJAX (Example)</h1>
+
+<input value="${resource.getPath}" hidden id="servletPath"/>
+<button onclick="makeRequest()">Make AJAX Request</button>
+
+<div id="response" style="margin-top: 20px; font-weight: bold;"></div>
+
+<script>
+  function makeRequest() {
+    // Create the XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
+    
+    // Servlet path
+    //var url = "/bin/practice";
+
+    var url = document.getElementById("servletPath").value+".txt";
+    console.log("urlValue::::::"+url);
+
+
+    // Initialize the request – GET method
+    xhr.open("GET", url, true);
+
+    // Listen for response changes
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+
+        // Successful response from servlet
+        var response = xhr.responseText;
+        document.getElementById("response").innerHTML = response;
+
+        // Show alert when JSON is successfully created / received
+        alert("JSON creation successful!");
+      
+      } else if (xhr.readyState === 4) {
+
+        // Error case
+        document.getElementById("response").innerHTML = "Request failed";
+      }
+    };
+
+    // Send the request
+    xhr.send();
+  }
+</script>
