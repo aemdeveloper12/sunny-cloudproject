@@ -1,0 +1,9 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "scripts":[
+    "create service user read-user",
+    "create service user write-user",
+    "set ACL for write-user \r\nallow jcr:read,jcr:write on /content/sunnycloud/data \r\nallow jcr:read on /conf/aem \r\nallow jcr:read on /apps \r\nend",
+    "set ACL for read-user \r\nallow jcr:read on /content/sunnycloud/data \r\nallow jcr:read on /conf/aem \r\nallow jcr:read on /apps \r\nend"
+  ]
+}

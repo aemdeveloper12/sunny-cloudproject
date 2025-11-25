@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
+    <filter root="/conf/global" mode="merge"/>
     <filter root="/conf/sunnycloud" mode="merge"/>
     <filter root="/content/sunnycloud" mode="merge"/>
+    <filter root="/var/workflow" mode="merge"/>
+    <filter root="/content/dam/sunnycloud/sample-cf-test"/>
     <filter root="/content/dam/sunnycloud" mode="merge">
         <exclude pattern="/content/dam/sunnycloud(/.*)?"/>
         <include pattern="/content/dam/sunnycloud/jcr:content(/.*)?"/>

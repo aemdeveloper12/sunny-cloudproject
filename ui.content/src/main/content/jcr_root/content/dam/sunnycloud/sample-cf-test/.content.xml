@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="8c22dfcb-8373-4366-835b-f20d409744fc">
+    <jcr:content
+        cq:name="sample-cf-test"
+        cq:parentPath="/content/dam/sunnycloud"
+        jcr:lastModified="{Date}2025-11-24T19:58:26.671+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Sample CF Test"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2025-11-24T19:58:26.671+05:30">
+        <data
+            cq:model="/conf/sunnycloud/settings/dam/cfm/models/cf-model-test"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                testData="[Hello hi,hi]"
+                testData_x0040_LastModified="{Date}2025-11-24T19:58:26.630+05:30"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="18fc6771-79bf-45f7-9791-52719344a95f"
+                _x0040_string_x0040_model="/conf/sunnycloud/settings/dam/cfm/models/cf-model-test"
+                _x0040_stringArray_x0040_variations="[]"
+                stringArray_x0040_testData="[Hello hi,hi]"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

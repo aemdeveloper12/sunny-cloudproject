@@ -1,0 +1,7 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "user.mapping":[
+    "sunnycloud-aem.core:readService=[read-user]",
+    "sunnycloud-aem.core:writeService=[write-user]"
+  ]
+}
