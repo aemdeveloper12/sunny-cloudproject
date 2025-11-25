@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:isCheckedOut="{Boolean}false"
+    jcr:primaryType="cq:WorkflowModel"
+    jcr:uuid="c23e7297-bfb6-496c-a126-da8fedf42c19"
+    sling:resourceType="cq/workflow/components/model"
+    description="Publish content tree"
+    title="Publish content tree">
+    <metaData
+        cq:lastModified="{Long}1617966095942"
+        cq:lastModifiedBy="workflow-process-service"
+        jcr:primaryType="nt:unstructured"
+        isImmutable="true"
+        multiResourceSupport="true"
+        tags="system"/>
+    <nodes jcr:primaryType="nt:unstructured">
+        <node0
+            jcr:primaryType="cq:WorkflowNode"
+            title="Start"
+            type="START">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0>
+        <node1
+            jcr:primaryType="cq:WorkflowNode"
+            description="Waiting for activation until the scheduled time is reached"
+            title="Waiting for activation"
+            type="PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DO_NOTIFY="false"
+                PARTICIPANT="admin"
+                timeoutHandler="com.day.cq.workflow.timeout.autoadvance.AbsoluteTimeAutoAdvancer"
+                timeoutMillis="0"/>
+        </node1>
+        <node2
+            jcr:primaryType="cq:WorkflowNode"
+            description="Tree publish content"
+            title="Tree publish content"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.day.cq.wcm.workflow.process.impl.treeactivation.TreeActivationWorkflowProcess"
+                PROCESS_ARGS="\0"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node2>
+        <node3
+            jcr:primaryType="cq:WorkflowNode"
+            title="End"
+            type="END">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node3>
+    </nodes>
+    <transitions jcr:primaryType="nt:unstructured">
+        <node0_x0023_node1
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node0"
+            rule="\0"
+            to="node1">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0_x0023_node1>
+        <node1_x0023_node2
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node1"
+            rule="\0"
+            to="node2">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node1_x0023_node2>
+        <node2_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            rule="\0"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node2_x0023_node3>
+    </transitions>
+</jcr:root>
