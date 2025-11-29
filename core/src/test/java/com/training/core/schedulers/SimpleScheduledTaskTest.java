@@ -17,6 +17,7 @@ package com.training.core.schedulers;
 
 import java.util.List;
 
+import org.apache.sling.event.jobs.JobManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,8 +29,7 @@ import uk.org.lidalia.slf4jtest.TestLogger;
 import uk.org.lidalia.slf4jtest.TestLoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(AemContextExtension.class)
 class SimpleScheduledTaskTest {
@@ -38,9 +38,14 @@ class SimpleScheduledTaskTest {
 
     private TestLogger logger = TestLoggerFactory.getTestLogger(fixture.getClass());
 
+    private JobManager jobManager;
+
     @BeforeEach
     void setup() {
         TestLoggerFactory.clear();
+
+        jobManager = mock(JobManager.class);
+        fixture.jobManager = jobManager;
     }
 
     @Test
@@ -50,6 +55,9 @@ class SimpleScheduledTaskTest {
 
         fixture.activate(config);
         fixture.run();
+
+        verify(jobManager, times(1))
+                .addJob(eq("practice/job"), anyMap());
 
         List<LoggingEvent> events = logger.getLoggingEvents();
         assertEquals(1, events.size());
