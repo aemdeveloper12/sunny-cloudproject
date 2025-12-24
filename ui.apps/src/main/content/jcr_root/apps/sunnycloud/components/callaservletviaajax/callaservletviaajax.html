@@ -11,21 +11,29 @@
     var servletUrl = "${resource.path @ context='uri'}.json";
     console.log("Servlet URL ::: " + servletUrl);
 
-    fetch(servletUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("result").innerHTML =
-        "Response : " + JSON.stringify(data);
-      alert("JSON saved successfully!");
-    })
-    .catch(error => {
-      console.error("Error:", error);
-      document.getElementById("result").innerHTML = "Error calling servlet";
-    });
+    // Fetch CSRF token
+    fetch("/libs/granite/csrf/token.json")
+      .then(res => res.json())
+      .then(tokenData => {
+
+        // Call servlet with CSRF token
+        return fetch(servletUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "CSRF-Token": tokenData.token
+          }
+        });
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("result").innerHTML =
+          "Response : " + JSON.stringify(data);
+        alert("JSON saved successfully!");
+      })
+      .catch(error => {
+        console.error(error);
+        document.getElementById("result").innerHTML = "Error calling servlet";
+      });
   }
 </script>
