@@ -8,7 +8,7 @@ import org.apache.sling.api.resource.ModifiableValueMap;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
@@ -19,12 +19,17 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.Objects;
 
-@Component(service = Servlet.class,
-        property = { "sling.servlet.paths=/bin/practice",
-        "sling.servlet.resourceTypes=/apps/sunnycloud/components/callaservletviaajax" ,
-        "sling.servlet.methods=GET",
-        "sling.servlet.extensions=txt" })
-public class SaveDatainAEM extends SlingSafeMethodsServlet {
+@Component(
+        service = Servlet.class,
+        property = {
+                "sling.servlet.resourceTypes=sunnycloud/components/callaservletviaajax",
+                "sling.servlet.methods=POST",
+                "sling.servlet.extensions=json"
+        }
+)
+public class SaveDatainAEM extends SlingAllMethodsServlet {
+
+    private static final Logger log = LoggerFactory.getLogger(SaveDatainAEM.class);
 
     @Reference
     ReadDummyJson readDummyJson;
@@ -32,43 +37,45 @@ public class SaveDatainAEM extends SlingSafeMethodsServlet {
     @Reference
     ResourceResolverFactory resolverFactory;
 
-    protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
+    @Override
+    protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
             throws ServletException, IOException {
 
-        //ResourceResolver resourceresolver = request.getResourceResolver();
+        ResourceResolver resolver = null;
 
-        final Logger log = LoggerFactory.getLogger(getClass());
         try {
+            // Get Service User Resolver
+            resolver = CommonUtils.getWriteResolver(resolverFactory);
+            log.info("Service User ID ::: {}", resolver.getUserID());
 
-            ResourceResolver resourceresolver = CommonUtils.getWriteResolver(resolverFactory);
-            log.info("User ID:::"+ resourceresolver.getUserID());
+            // Get data from 3rd-party API
+            String jsonFromService = readDummyJson.getDatafromDummyJsonApi();
+            log.info("JSON from API ::: {}", jsonFromService);
 
-            // Getting the Data from 3rd Party APi via a Service
-            String jsonfromService = readDummyJson.getDatafromDummyJsonApi();
-            log.info("JSON::: " + jsonfromService);
-
-            // Converting the String into Resource by using ResourceResolver
-            Resource resource = resourceresolver.getResource("/content/sunnycloud/data");
-            log.info("Resource Found? " + (resource != null));
+            // Get target resource
+            Resource resource = resolver.getResource("/content/sunnycloud/data");
 
             if (Objects.nonNull(resource)) {
-                // This MVM is used to Update/remove any of the Properties in JCR in AEM
-                ModifiableValueMap map = resource.adaptTo(ModifiableValueMap.class);
-                log.info("MVM is null? ::: " + (map == null));
+                ModifiableValueMap mvm = resource.adaptTo(ModifiableValueMap.class);
 
-                // to add the Data to AEM, ADD the values in the for Key value Pair
-                map.put("json", jsonfromService);
-                resourceresolver.commit();
-                resourceresolver.close();
-                log.info("JSON Saved Successfully");
+                if (Objects.nonNull(mvm)) {
+                    mvm.put("json", jsonFromService);
+                    resolver.commit();
+                    log.info("JSON saved successfully in JCR");
+                }
             }
+
+            response.setContentType("application/json");
+            response.getWriter().write("{\"status\":\"success\"}");
+
         } catch (Exception e) {
-            response.getWriter().write("Json Creation is Unsuccesful" + e.getMessage());
-            e.printStackTrace();
+            log.error("Error while saving JSON", e);
+            response.setStatus(500);
+            response.getWriter().write("{\"status\":\"failed\"}");
+        } finally {
+            if (resolver != null && resolver.isLive()) {
+                resolver.close();
+            }
         }
-        response.setContentType("text/plain");
-        response.getWriter().write("Json Creation is Successful");
-
     }
-
 }
