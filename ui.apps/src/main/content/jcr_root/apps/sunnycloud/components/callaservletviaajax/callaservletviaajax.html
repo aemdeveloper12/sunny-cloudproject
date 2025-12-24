@@ -1,44 +1,31 @@
-<h1>Calling a Servlet via AJAX (Example)</h1>
+<h2>Call Resource Type Servlet via AJAX</h2>
 
-<input value="${resource.getPath}" hidden id="servletPath"/>
-<button onclick="makeRequest()">Make AJAX Request</button>
+<button type="button" onclick="callServlet()">Save JSON in AEM</button>
 
-<div id="response" style="margin-top: 20px; font-weight: bold;"></div>
+<div id="result" style="margin-top:20px; font-weight:bold;"></div>
 
 <script>
-  function makeRequest() {
-    // Create the XMLHttpRequest object
-    var xhr = new XMLHttpRequest();
-    
-    // Servlet path
-    //var url = "/bin/practice";
+  function callServlet() {
 
-    var url = document.getElementById("servletPath").value+".txt";
-    console.log("urlValue::::::"+url);
+    // This is the current component resource path
+    var servletUrl = "${resource.path @ context='uri'}.json";
+    console.log("Servlet URL ::: " + servletUrl);
 
-
-    // Initialize the request – GET method
-    xhr.open("GET", url, true);
-
-    // Listen for response changes
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-
-        // Successful response from servlet
-        var response = xhr.responseText;
-        document.getElementById("response").innerHTML = response;
-
-        // Show alert when JSON is successfully created / received
-        alert("JSON creation successful!");
-      
-      } else if (xhr.readyState === 4) {
-
-        // Error case
-        document.getElementById("response").innerHTML = "Request failed";
+    fetch(servletUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
       }
-    };
-
-    // Send the request
-    xhr.send();
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("result").innerHTML =
+        "Response : " + JSON.stringify(data);
+      alert("JSON saved successfully!");
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      document.getElementById("result").innerHTML = "Error calling servlet";
+    });
   }
 </script>
