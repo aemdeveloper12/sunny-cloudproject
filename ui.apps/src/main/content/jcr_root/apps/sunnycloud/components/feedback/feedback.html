@@ -1,0 +1,69 @@
+<sly data-sly-test="${wcmmode.edit}">
+  <div style="border:1px dashed #ccc; padding:10px;">
+    Feedback Component (Author Mode)
+  </div>
+</sly>
+
+<div class="feedback-component">
+
+  <!-- Feedback Textarea -->
+  <textarea id="feedbackComment"
+            rows="5"
+            placeholder="Enter your feedback here...">
+  </textarea>
+
+  <br/><br/>
+
+  <!-- Submit Button -->
+  <button type="button" onclick="submitFeedback()">
+    Submit
+  </button>
+
+  <!-- Result -->
+  <div id="feedbackResult" style="margin-top:15px; font-weight:bold;"></div>
+
+</div>
+
+<script>
+  function submitFeedback() {
+
+    const comment = document.getElementById("feedbackComment").value.trim();
+
+    if (!comment) {
+      document.getElementById("feedbackResult").innerHTML =
+        "Please enter feedback.";
+      return;
+    }
+
+    // Resource-type servlet URL
+    const servletUrl = "${resource.path @ context='uri'}.json";
+
+    // Fetch CSRF token
+    fetch("/libs/granite/csrf/token.json")
+      .then(res => res.json())
+      .then(tokenData => {
+
+        return fetch(servletUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "CSRF-Token": tokenData.token
+          },
+          body: JSON.stringify({
+            comment: comment
+          })
+        });
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("feedbackResult").innerHTML =
+          "Feedback submitted successfully!";
+        document.getElementById("feedbackComment").value = "";
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("feedbackResult").innerHTML =
+          "Error submitting feedback.";
+      });
+  }
+</script>
